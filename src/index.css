@@ -1,11 +1,42 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import '@syncfusion/ej2-base/styles/material.css'; /* Or other themes like bootstrap, fabric, etc. */
+@import '@syncfusion/ej2-buttons/styles/material.css';
+@import '@syncfusion/ej2-calendars/styles/material.css';
+@import '@syncfusion/ej2-dropdowns/styles/material.css';
+@import '@syncfusion/ej2-inputs/styles/material.css';
+@import '@syncfusion/ej2-navigations/styles/material.css';
+@import '@syncfusion/ej2-popups/styles/material.css';
+@import '@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '@syncfusion/ej2-grids/styles/material.css';
+
+
+@font-face {
+    font-family: 'HurmeSans';
+    src: url('/src/assets/hurme-geometric-sans-3-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "HurmeSans";
+    src: url("/src/assets/hurme-geometric-sans-3-bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
 
   --radius-sm: calc(var(--radius) - 4px);
+
+  --border-input: var(--secondary);
+
+  --border-color-checkbox: var(--checkbox-checked-border-color);
 
   --radius-md: calc(var(--radius) - 2px);
 
@@ -74,17 +105,22 @@
   --color-sidebar-border: var(--sidebar-border);
 
   --color-sidebar-ring: var(--sidebar-ring);
+
 }
 
 :root {
 
-  --radius: 0.625rem;
+  --font-sans: 'HurmeSans', sans-serif;
+
+  --radius: 0;
 
   --background: oklch(1 0 0);
 
-  --foreground: oklch(0.13 0.028 261.692);
+  --foreground: oklch(0.269 0 89.876);
 
   --card: oklch(1 0 0);
+
+  --checkbox-checked-border-color: #FFDE54;
 
   --card-foreground: oklch(0.13 0.028 261.692);
 
@@ -92,9 +128,9 @@
 
   --popover-foreground: oklch(0.13 0.028 261.692);
 
-  --primary: oklch(0.21 0.034 264.665);
+  --primary: oklch(0.867 0.177 90.847);
 
-  --primary-foreground: oklch(0.985 0.002 247.839);
+  --primary-foreground: oklch(0.269 0 89.876);
 
   --secondary: oklch(0.967 0.003 264.542);
 
