@@ -107,13 +107,13 @@ export function PageHeader() {
   const [value, setValue] = React.useState("");
 
   return (
-    <div className="bg-[#262626]">
+    <section className="bg-[#262626]">
       <Autocomplete
         open={open}
         setOpen={setOpen}
         value={value}
         setValue={setValue}
       />
-    </div>
+    </section>
   );
 }
