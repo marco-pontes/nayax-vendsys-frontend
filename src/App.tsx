@@ -9,7 +9,9 @@ function App() {
       <header>
         <AppNavigationMenu />
       </header>
-      <MarketContent />
+      <main>
+        <MarketContent />
+      </main>
       <Footer />
     </>
   );

@@ -12,7 +12,7 @@ import { PageHeader } from "@/features/market/components/PageHeader.tsx";
 
 export const MarketContent = () => {
   return (
-    <main>
+    <>
       <PageHeader />
       <h4>Related Links</h4>
       <section>
@@ -38,6 +38,6 @@ export const MarketContent = () => {
           </Tabs>
         </div>
       </section>
-    </main>
+    </>
   );
 };
