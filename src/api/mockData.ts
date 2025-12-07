@@ -87,7 +87,7 @@ export const markets: MarketSummary[] = [
   {
     id: 1,
     accountName: accounts[0].name,
-    active: false,
+    active: true,
     providerName: providers[0].name,
   },
   {

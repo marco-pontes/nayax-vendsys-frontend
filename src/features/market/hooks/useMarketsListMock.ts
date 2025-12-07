@@ -5,7 +5,7 @@ import { useState } from "react";
 type MockFetchResponse = { markets: MarketSummary[] };
 
 export function useMarketsListMock() {
-  const [markets, setMarkets] = useState<MarketSummary[]>([]);
+  const [markets, setMarkets] = useState<MarketSummary[] | null>(null);
 
   async function fetchMarkets() {
     const promise = new Promise<MockFetchResponse>((resolve) => {

@@ -17,7 +17,7 @@ export const MarketTabs = () => {
         <EmptyState />
       </div>
       <div className="flex w-full max-w-sm flex-col">
-        <Tabs defaultValue="account">
+        <Tabs defaultValue="market-info">
           <TabsList>
             <TabsTrigger value="market-info">Market Information</TabsTrigger>
             <TabsTrigger value="prices">Pricing Information</TabsTrigger>
