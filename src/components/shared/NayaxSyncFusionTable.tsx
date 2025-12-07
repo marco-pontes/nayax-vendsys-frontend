@@ -10,7 +10,7 @@ import {
 } from "@syncfusion/ej2-react-grids";
 import { orderDetails, type Order } from "@/api/mockData";
 
-const SimpleSyncfusionTable: React.FC = () => {
+const NayaxSyncFusionTable: React.FC = () => {
   const data: Order[] = orderDetails;
 
   const pageSettings = { pageSizes: true, pageSize: 5 };
@@ -59,4 +59,4 @@ const SimpleSyncfusionTable: React.FC = () => {
   );
 };
 
-export default SimpleSyncfusionTable;
+export default NayaxSyncFusionTable;

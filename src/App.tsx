@@ -1,13 +1,13 @@
 import "./App.css";
 import { Footer } from "@/components/layout/Footer.tsx";
-import { AppNavigationMenu } from "@/components/layout/AppNavigationMenu.tsx";
+import { NayaxNavigationMenu } from "@/components/layout/NayaxNavigationMenu.tsx";
 import { MarketPage } from "@/pages/MarketPage.tsx";
 
 function App() {
   return (
     <>
       <header>
-        <AppNavigationMenu />
+        <NayaxNavigationMenu />
       </header>
       <main>
         <MarketPage />

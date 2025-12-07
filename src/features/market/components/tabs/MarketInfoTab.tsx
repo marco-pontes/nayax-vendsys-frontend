@@ -16,7 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card.tsx";
-import SimpleSyncFusionTable from "@/components/shared/SimpleSyncFusionTable.tsx";
+import SimpleSyncFusionTable from "@/components/shared/NayaxSyncFusionTable.tsx";
 import { Checkbox } from "@/components/ui/checkbox.tsx";
 import { MarketForm } from "@/features/market/components/tabs/MarketForm.tsx";
 import { Label } from "@/components/ui/label.tsx";

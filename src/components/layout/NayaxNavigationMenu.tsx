@@ -49,7 +49,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function AppNavigationMenu() {
+export function NayaxNavigationMenu() {
   return (
     <nav>
       <a href="https://www.nayax.com" target="_blank">

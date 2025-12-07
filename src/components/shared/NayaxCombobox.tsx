@@ -1,10 +1,11 @@
-"use client";
-
-import * as React from "react";
+import { type Dispatch, type SetStateAction } from "react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover.tsx";
+import { Button } from "@/components/ui/button.tsx";
 import { Check, ChevronsUpDown } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -12,12 +13,8 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@/components/ui/command.tsx";
+import { cn } from "@/lib/utils.ts";
 
 const frameworks = [
   {
@@ -42,10 +39,18 @@ const frameworks = [
   },
 ];
 
-export function ComboboxDemo() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
-
+type AutocompleteProps = {
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  value: string;
+  setValue: Dispatch<SetStateAction<string>>;
+};
+export const NayaxCombobox = ({
+  open,
+  setOpen,
+  value,
+  setValue,
+}: AutocompleteProps) => {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -91,4 +96,4 @@ export function ComboboxDemo() {
       </PopoverContent>
     </Popover>
   );
-}
+};
