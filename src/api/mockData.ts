@@ -72,7 +72,7 @@ export const locations: NLocation[] = [
   },
 ];
 
-const accounts: Account[] = [
+export const accounts: Account[] = [
   {
     id: "VFS0001",
     name: "Athens First",
@@ -83,7 +83,7 @@ const accounts: Account[] = [
   },
 ];
 
-export const marketList: MarketSummary[] = [
+export const markets: MarketSummary[] = [
   {
     id: 1,
     accountName: accounts[0].name,

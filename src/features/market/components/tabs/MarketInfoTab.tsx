@@ -16,9 +16,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card.tsx";
-import SimpleSyncFusionTable from "@/components/SimpleSyncFusionTable.tsx";
+import SimpleSyncFusionTable from "@/components/shared/SimpleSyncFusionTable.tsx";
 import { Checkbox } from "@/components/ui/checkbox.tsx";
-import { AppForm } from "@/components/AppForm.tsx";
+import { MarketForm } from "@/features/market/components/tabs/MarketForm.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Button } from "@/components/ui/button.tsx";
@@ -74,7 +74,7 @@ export const MarketInfoTab = () => {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <AppForm />
+        <MarketForm />
         <SimpleSyncFusionTable />
       </CardContent>
       <CardFooter>

@@ -8,7 +8,7 @@ import {
   Sort,
   Filter,
 } from "@syncfusion/ej2-react-grids";
-import { orderDetails, type Order } from "./mockData";
+import { orderDetails, type Order } from "@/api/mockData";
 
 const SimpleSyncfusionTable: React.FC = () => {
   const data: Order[] = orderDetails;
