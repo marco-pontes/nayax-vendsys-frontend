@@ -13,7 +13,7 @@
 
 @font-face {
     font-family: 'HurmeSans';
-    src: url('/src/assets/hurme-geometric-sans-3-regular.otf') format('opentype');
+    src: url('/src/assets/fonts/hurme-geometric-sans-3-regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -21,7 +21,7 @@
 
 @font-face {
     font-family: "HurmeSans";
-    src: url("/src/assets/hurme-geometric-sans-3-bold.otf") format("opentype");
+    src: url("/src/assets/fonts/hurme-geometric-sans-3-bold.otf") format("opentype");
     font-weight: bold;
     font-style: normal;
     font-display: swap;
