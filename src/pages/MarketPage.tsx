@@ -10,7 +10,7 @@ import { AssetSyncTab } from "@/features/market/components/tabs/AssetSyncTab.tsx
 import { EmptyState } from "@/features/market/components/EmptyState.tsx";
 import { PageHeader } from "@/features/market/components/PageHeader.tsx";
 
-export const MarketContent = () => {
+export const MarketPage = () => {
   return (
     <>
       <PageHeader />
