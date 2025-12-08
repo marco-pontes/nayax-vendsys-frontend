@@ -27,11 +27,14 @@ export function PageHeader() {
         <PageHeaderSkeleton />
       ) : (
         <div className="flex flex-row flex-wrap content-center items-center p-8">
-          <div className="flex gap-8 w-full mb-6">
+          <div className="flex w-full mb-6">
             <h1 className="text-white">{t("markets.page.title")}</h1>
           </div>
-          <div className="flex gap-8 w-full mb-6">
-            <Label className="text-white" htmlFor="nayax-markets">
+          <div className="flex flex-wrap md:flex-nowrap w-full mb-6">
+            <Label
+              className="text-white w-full md:w-3xs"
+              htmlFor="nayax-markets"
+            >
               Select Market{" "}
             </Label>
             <NayaxAutocomplete
@@ -49,8 +52,11 @@ export function PageHeader() {
             />
           </div>
 
-          <div className="flex gap-5">
-            <Label htmlFor="include-inactive" className="text-white">
+          <div className="flex w-full">
+            <Label
+              htmlFor="include-inactive"
+              className="text-white w-full md:w-3xs"
+            >
               Include Inactive
             </Label>
             <Checkbox

@@ -48,17 +48,17 @@ export function MarketPricingForm({ market }: MarketFormProps) {
   return (
     <form
       id="form-pricing"
-      className="flex flex-row gap-16"
+      className="flex flex-row flex-wrap md:flex-nowrap gap-16"
       onSubmit={form.handleSubmit(onSubmit)}
     >
-      <FieldGroup className="w-1/2">
+      <FieldGroup className="w-2/2 md:w-1/2">
         <CreditCardFeeField form={form} name="creditCardFee" />
         <CreditCardFeePercentageField
           form={form}
           name="creditCardFeePercentage"
         />
       </FieldGroup>
-      <FieldGroup className="w-1/2">
+      <FieldGroup className="w-2/2 md:w-1/2">
         <ApplyFeeField form={form} name="applyFee" />
         <HasPriceTagsField form={form} name="hasPriceTags" />
       </FieldGroup>

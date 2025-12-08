@@ -14,7 +14,7 @@ export const MarketTabs = () => {
   const { marketDetails } = useMarketContext();
   return (
     <section className="bg-muted">
-      <div className="flex flex-col w-7xl m-auto p-3">
+      <div className="flex flex-col w-full m-auto p-3">
         {marketDetails ? (
           <Tabs defaultValue="info">
             <TabsList>

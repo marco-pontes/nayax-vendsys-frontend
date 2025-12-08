@@ -54,10 +54,10 @@ export function MarketInfoForm({ market }: MarketFormProps) {
   return (
     <form
       id="form-market"
-      className="flex gap-16"
+      className="flex flex-wrap md:flex-nowrap gap-16"
       onSubmit={form.handleSubmit(onSubmit)}
     >
-      <FieldGroup className="w-1/2">
+      <FieldGroup className="lg:w-1/2 w-2/2">
         <ActiveField form={form} name="active" />
         <MarketNumberField form={form} name="id" disabled={market.active} />
         <MgmtField form={form} disabled={market.active} name="mgmtNumber" />
@@ -65,7 +65,7 @@ export function MarketInfoForm({ market }: MarketFormProps) {
         <LocationField form={form} name="location" disabled={market.active} />
         <ProviderField form={form} name="provider" />
       </FieldGroup>
-      <FieldGroup className="w-1/2 flex">
+      <FieldGroup className="lg:w-1/2 w-2/2 flex">
         <ProviderConfigField form={form} name="providerConfig" />
         <VDISection market={market} />
       </FieldGroup>
