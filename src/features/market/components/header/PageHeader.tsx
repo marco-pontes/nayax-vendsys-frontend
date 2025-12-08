@@ -5,10 +5,14 @@ import { BadgeCheck, BadgeX } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import { PageHeaderSkeleton } from "@/features/market/components/header/PageHeaderSkeleton.tsx";
+import { useMarketContext } from "@/contexts/useMarketContext.tsx";
 
-type PageHeaderProps = { onSelectMarket: (v: number | null) => void };
+export function PageHeader() {
+  const { setCurrentMarketId } = useMarketContext();
 
-export function PageHeader({ onSelectMarket }: PageHeaderProps) {
+  const onSelectMarket = (value: number | null) => {
+    setCurrentMarketId(value);
+  };
   const { markets, fetchMarkets } = useMarketsListMock();
 
   useEffect(() => {
