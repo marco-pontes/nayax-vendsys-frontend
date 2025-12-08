@@ -5,7 +5,9 @@ import { useState } from "react";
 type MockFetchResponse = { marketDetails: MarketDetails };
 
 export function useMarketDetailsMock() {
-  const [marketDetails, setMarketDetails] = useState<MarketDetails>();
+  const [marketDetails, setMarketDetails] = useState<MarketDetails | null>(
+    null,
+  );
 
   async function fetchMarketDetails(id: number) {
     const promise = new Promise<MockFetchResponse>((resolve) => {

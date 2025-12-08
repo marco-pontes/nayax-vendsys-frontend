@@ -3,13 +3,13 @@ export type Account = {
   name: string;
 };
 
-export type NProvider = {
+export type MarketProvider = {
   id: number;
   name: string;
   config: string;
 };
 
-export type NLocation = {
+export type MarketLocation = {
   id: number;
   name: string;
 };
@@ -38,7 +38,11 @@ export type MarketSummary = {
 
 export type MarketDetails = {
   id: number;
-  mngmtNumber: number;
+  active: boolean;
+  account: Account;
+  provider: MarketProvider;
+  location: MarketLocation;
+  mgmtNumber: number;
   creditCardFee: number;
   creditCardFeePercentage: number;
   applyFee: boolean;

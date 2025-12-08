@@ -4,8 +4,10 @@ import type {
   Account,
   MarketDetails,
   MarketSummary,
-  NLocation,
-  NProvider,
+  MarketLocation,
+  MarketProvider,
+  Product,
+  ProductContainer,
 } from "@/types/types.tsx";
 
 export interface Order {
@@ -48,7 +50,7 @@ export const orderDetails: Order[] = [
   },
 ];
 
-export const providers: NProvider[] = [
+export const marketProviders: MarketProvider[] = [
   {
     id: 1,
     name: "My Market",
@@ -59,9 +61,14 @@ export const providers: NProvider[] = [
     name: "Vendsys Test",
     config: "",
   },
+  {
+    id: 3,
+    name: "Test Provider",
+    config: "",
+  },
 ];
 
-export const locations: NLocation[] = [
+export const marketLocations: MarketLocation[] = [
   {
     id: 1,
     name: "Mall",
@@ -69,6 +76,10 @@ export const locations: NLocation[] = [
   {
     id: 2,
     name: "Market",
+  },
+  {
+    id: 3,
+    name: "Store",
   },
 ];
 
@@ -81,6 +92,10 @@ export const accounts: Account[] = [
     id: "VFS0002",
     name: "1 Styline Plant",
   },
+  {
+    id: "VFS0003",
+    name: "Test Account 1",
+  },
 ];
 
 export const markets: MarketSummary[] = [
@@ -88,20 +103,57 @@ export const markets: MarketSummary[] = [
     id: 1,
     accountName: accounts[0].name,
     active: true,
-    providerName: providers[0].name,
+    providerName: marketProviders[0].name,
   },
   {
     id: 2,
     accountName: accounts[1].name,
     active: false,
-    providerName: providers[1].name,
+    providerName: marketProviders[1].name,
+  },
+  {
+    id: 3,
+    accountName: accounts[2].name,
+    active: false,
+    providerName: marketProviders[2].name,
   },
 ];
 
+const productUpdates: Partial<Product>[] = [{ id: 0, name: "Product 1" }];
+const productContainers: ProductContainer[] = [
+  {
+    id: 0,
+    serial: "123AAA123",
+    category: "Beverages Cooler",
+    model: "Beverages Cooler",
+    active: true,
+    isCash: false,
+  },
+  {
+    id: 0,
+    serial: "456BBB456",
+    category: "Generic Container 1",
+    model: "Generic Container 1",
+    active: true,
+    isCash: false,
+  },
+  {
+    id: 0,
+    serial: "456BBB456",
+    category: "Generic Container 2",
+    model: "Generic Container 2",
+    active: false,
+    isCash: true,
+  },
+];
 export const marketDetails: Record<number, MarketDetails> = {
   1: {
     id: 1,
-    mngmtNumber: 0,
+    active: true,
+    account: accounts[0],
+    location: marketLocations[0],
+    provider: marketProviders[0],
+    mgmtNumber: 0,
     creditCardFee: 0,
     creditCardFeePercentage: 0,
     applyFee: false,
@@ -114,7 +166,11 @@ export const marketDetails: Record<number, MarketDetails> = {
   },
   2: {
     id: 2,
-    mngmtNumber: 0,
+    active: false,
+    account: accounts[1],
+    location: marketLocations[1],
+    provider: marketProviders[1],
+    mgmtNumber: 0,
     creditCardFee: 0,
     creditCardFeePercentage: 0,
     applyFee: false,
@@ -124,5 +180,22 @@ export const marketDetails: Record<number, MarketDetails> = {
     lastSale: null,
     productUpdatesInQueue: [],
     assets: [],
+  },
+  3: {
+    id: 3,
+    active: false,
+    account: accounts[2],
+    location: marketLocations[2],
+    provider: marketProviders[2],
+    mgmtNumber: 1121212,
+    creditCardFee: 3,
+    creditCardFeePercentage: 4,
+    applyFee: true,
+    hasPriceTags: true,
+    lastMarketPush: new Date(),
+    lastProductPush: new Date(),
+    lastSale: new Date(),
+    productUpdatesInQueue: productUpdates,
+    assets: productContainers,
   },
 };
