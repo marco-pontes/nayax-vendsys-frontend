@@ -1,13 +1,3 @@
-import { Textarea } from "@/components/ui/textarea.tsx";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select.tsx";
 import {
   Card,
   CardContent,
@@ -16,69 +6,46 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card.tsx";
-import SimpleSyncFusionTable from "@/components/shared/NayaxSyncFusionTable.tsx";
-import { Checkbox } from "@/components/ui/checkbox.tsx";
-import { MarketForm } from "@/features/market/components/tabs/MarketForm.tsx";
-import { Label } from "@/components/ui/label.tsx";
-import { Input } from "@/components/ui/input.tsx";
+import { MarketInformationForm } from "@/features/market/components/forms/MarketInformationForm.tsx";
 import { Button } from "@/components/ui/button.tsx";
+import type { MarketDetails } from "@/types/types.tsx";
+import { Field } from "@/components/ui/field.tsx";
+import { VDISection } from "@/features/market/components/tabs/VDISection.tsx";
 
-export const MarketInfoTab = () => {
+interface MarketInfoTabProps {
+  market: MarketDetails;
+}
+
+export const MarketInfoTab = ({ market }: MarketInfoTabProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Account</CardTitle>
+        <CardTitle>Market Information</CardTitle>
         <CardDescription>
-          Make changes to your account here. Click save when you&apos;re done.
+          Basic Market Information is displayed here. Active markets have some
+          options disabled.
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6">
-        <div className="grid gap-3">
-          <Label htmlFor="tabs-demo-name">Name</Label>
-          <Input id="tabs-demo-name" defaultValue="Pedro Duarte" />
-        </div>
-        <div className="grid gap-3">
-          <Label htmlFor="tabs-demo-username">Username</Label>
-          <Input id="tabs-demo-username" defaultValue="@peduarte" />
-        </div>
-        <Button>My custom button</Button>
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-3">
-            <Checkbox id="terms" />
-            <Label htmlFor="terms">Accept terms and conditions</Label>
-          </div>
-          <div className="flex items-start gap-3">
-            <Label htmlFor="terms-2">Accept terms and conditions</Label>
-            <Checkbox id="terms-2" defaultChecked />
-          </div>
-          <div className="flex items-start gap-3">
-            <Label htmlFor="toggle">Enable notifications</Label>
-            <Checkbox id="toggle" disabled />
-          </div>
-        </div>
-
-        <Textarea></Textarea>
-
-        <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select a fruit" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Fruits</SelectLabel>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="blueberry">Blueberry</SelectItem>
-              <SelectItem value="grapes">Grapes</SelectItem>
-              <SelectItem value="pineapple">Pineapple</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-        <MarketForm />
-        <SimpleSyncFusionTable />
+        <MarketInformationForm market={market} />
+        <Card>
+          <CardHeader>
+            <CardTitle>VDI Info</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col">
+            <VDISection market={market} />
+          </CardContent>
+        </Card>
       </CardContent>
       <CardFooter>
-        <Button>Save changes</Button>
+        <Field orientation="horizontal">
+          {/*<Button type="button" variant="outline" onClick={() => form.reset()}>*/}
+          {/*  Reset*/}
+          {/*</Button>*/}
+          <Button type="submit" form="form-market">
+            Save changes
+          </Button>
+        </Field>
       </CardFooter>
     </Card>
   );
