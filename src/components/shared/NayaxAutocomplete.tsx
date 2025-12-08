@@ -26,11 +26,13 @@ type AutocompleteProps<T extends AutocompleteOptionsValueType> = {
   options: AutocompleteOptionsType<T>;
   onSelect: (v: T | null) => void;
   placeholder?: string;
+  id: string;
 };
 export const NayaxAutocomplete = <T extends AutocompleteOptionsValueType>({
   options,
   onSelect,
   placeholder = "Please Select...",
+  id,
 }: AutocompleteProps<T>) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState<T | null>(null);
@@ -41,7 +43,8 @@ export const NayaxAutocomplete = <T extends AutocompleteOptionsValueType>({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-sm justify-between"
+          id={id}
         >
           {value !== null
             ? options.find((option) => option.value === value)?.label
@@ -49,7 +52,7 @@ export const NayaxAutocomplete = <T extends AutocompleteOptionsValueType>({
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-sm p-0">
         <Command>
           <CommandInput placeholder="Search option..." className="h-9" />
           <CommandList>

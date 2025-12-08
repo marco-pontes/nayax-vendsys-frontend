@@ -5,10 +5,10 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs.tsx";
-import { MarketInfoTab } from "@/features/market/components/tabs/MarketInfoTab.tsx";
-import { PricingTab } from "@/features/market/components/tabs/PricingTab.tsx";
 import type { MarketDetails } from "@/types/types.tsx";
-import { MarketAssetsTab } from "@/features/market/components/tabs/MarketAssetsTab.tsx";
+import { MarketInfoTab } from "@/features/market/components/tabs/information/MarketInfoTab.tsx";
+import { PricingTab } from "@/features/market/components/tabs/pricing/PricingTab.tsx";
+import { MarketAssetsTab } from "@/features/market/components/tabs/assets/MarketAssetsTab.tsx";
 
 interface MarketTabsProps {
   market?: MarketDetails | null;
@@ -16,9 +16,8 @@ interface MarketTabsProps {
 
 export const MarketTabs = ({ market }: MarketTabsProps) => {
   return (
-    <section>
-      <h2>Related Links</h2>
-      <div className="flex w-full flex-col">
+    <section className="bg-muted">
+      <div className="flex flex-col w-7xl m-auto p-3">
         {market ? (
           <Tabs defaultValue="info">
             <TabsList>

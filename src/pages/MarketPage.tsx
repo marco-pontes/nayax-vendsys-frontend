@@ -1,7 +1,7 @@
-import { PageHeader } from "@/features/market/components/PageHeader.tsx";
-import { MarketTabs } from "@/features/market/components/MarketTabs.tsx";
+import { MarketTabs } from "@/features/market/components/tabs/MarketTabs.tsx";
 import { useMarketDetailsMock } from "@/features/market/hooks/useMarketDetailsMock.ts";
 import { useEffect, useState } from "react";
+import { PageHeader } from "@/features/market/components/header/PageHeader.tsx";
 
 export const MarketPage = () => {
   const [currentMarketId, setCurrentMarketId] = useState<number | null>(null);

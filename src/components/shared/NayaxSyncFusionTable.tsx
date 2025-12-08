@@ -36,7 +36,7 @@ const NayaxSyncFusionTable = <T extends object>({
         allowSorting={true}
         allowFiltering={true}
         filterSettings={filterSettings}
-        height={315}
+        height={200}
       >
         <ColumnsDirective>
           {columnConfigs.map((config) => (

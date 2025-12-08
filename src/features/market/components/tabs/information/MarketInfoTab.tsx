@@ -6,19 +6,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card.tsx";
-import { MarketInformationForm } from "@/features/market/components/forms/MarketInformationForm.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import type { MarketDetails } from "@/types/types.tsx";
 import { Field } from "@/components/ui/field.tsx";
-import { VDISection } from "@/features/market/components/tabs/VDISection.tsx";
-
+import { MarketInfoForm } from "@/features/market/components/tabs/information/form/MarketInfoForm.tsx";
 interface MarketInfoTabProps {
   market: MarketDetails;
 }
 
 export const MarketInfoTab = ({ market }: MarketInfoTabProps) => {
   return (
-    <Card>
+    <Card className={"border-t-0"}>
       <CardHeader>
         <CardTitle>Market Information</CardTitle>
         <CardDescription>
@@ -27,21 +25,10 @@ export const MarketInfoTab = ({ market }: MarketInfoTabProps) => {
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6">
-        <MarketInformationForm market={market} />
-        <Card>
-          <CardHeader>
-            <CardTitle>VDI Info</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-col">
-            <VDISection market={market} />
-          </CardContent>
-        </Card>
+        <MarketInfoForm market={market} />
       </CardContent>
       <CardFooter>
         <Field orientation="horizontal">
-          {/*<Button type="button" variant="outline" onClick={() => form.reset()}>*/}
-          {/*  Reset*/}
-          {/*</Button>*/}
           <Button type="submit" form="form-market">
             Save changes
           </Button>

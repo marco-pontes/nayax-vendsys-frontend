@@ -2,12 +2,10 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card.tsx";
 import NayaxSyncFusionTable from "@/components/shared/NayaxSyncFusionTable.tsx";
-import { Button } from "@/components/ui/button.tsx";
 import type { MarketDetails } from "@/types/types.tsx";
 
 interface MarketInfoTabProps {
@@ -23,7 +21,7 @@ export const MarketAssetsTab = ({ market }: MarketInfoTabProps) => {
     { field: "isCash", headerText: "Is Cash" },
   ];
   return (
-    <Card>
+    <Card className={"border-t-0"}>
       <CardHeader>
         <CardTitle>Market Assets</CardTitle>
         <CardDescription>
@@ -36,9 +34,6 @@ export const MarketAssetsTab = ({ market }: MarketInfoTabProps) => {
           columnConfigs={columnConfigs}
         />
       </CardContent>
-      <CardFooter>
-        <Button>Save changes</Button>
-      </CardFooter>
     </Card>
   );
 };

@@ -20,7 +20,7 @@ export const EmptyState = () => {
         <EmptyDescription>No data found</EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
-        <Button>Add data</Button>
+        <Button disabled>Add data</Button>
       </EmptyContent>
     </Empty>
   );
