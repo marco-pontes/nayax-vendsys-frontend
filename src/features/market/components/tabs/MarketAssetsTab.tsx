@@ -15,6 +15,13 @@ interface MarketInfoTabProps {
 }
 
 export const MarketAssetsTab = ({ market }: MarketInfoTabProps) => {
+  const columnConfigs = [
+    { field: "id", headerText: "Id" },
+    { field: "serial", headerText: "Serial" },
+    { field: "model", headerText: "Model" },
+    { field: "active", headerText: "Active" },
+    { field: "isCash", headerText: "Is Cash" },
+  ];
   return (
     <Card>
       <CardHeader>
@@ -24,10 +31,10 @@ export const MarketAssetsTab = ({ market }: MarketInfoTabProps) => {
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6">
-        {market.assets.map((asset) => (
-          <>{asset.model}</>
-        ))}
-        <NayaxSyncFusionTable />
+        <NayaxSyncFusionTable
+          items={market.assets}
+          columnConfigs={columnConfigs}
+        />
       </CardContent>
       <CardFooter>
         <Button>Save changes</Button>

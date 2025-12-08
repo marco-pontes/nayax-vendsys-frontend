@@ -104,7 +104,6 @@ export function MarketInformationForm({ market }: MarketFormProps) {
             <>
               <Field data-invalid={fieldState.invalid} orientation="horizontal">
                 <FieldLabel htmlFor="form-active">Active</FieldLabel>
-                {field.value.toString()}
                 <Checkbox
                   checked={field.value}
                   onCheckedChange={field.onChange}

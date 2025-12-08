@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
   GridComponent,
   ColumnsDirective,
@@ -8,11 +7,22 @@ import {
   Sort,
   Filter,
 } from "@syncfusion/ej2-react-grids";
-import { orderDetails, type Order } from "@/api/mockData";
 
-const NayaxSyncFusionTable: React.FC = () => {
-  const data: Order[] = orderDetails;
-
+type ColumnConfig = {
+  field: string;
+  headerText: string;
+  width?: string;
+  format?: string;
+  textAlign?: string;
+};
+type NayaxSyncFusionTableProps<T extends object> = {
+  items: T[];
+  columnConfigs: ColumnConfig[];
+};
+const NayaxSyncFusionTable = <T extends object>({
+  items,
+  columnConfigs,
+}: NayaxSyncFusionTableProps<T>) => {
   const pageSettings = { pageSizes: true, pageSize: 5 };
   const filterSettings = { type: "Excel" as const }; // Define o tipo de filtro
 
@@ -20,7 +30,7 @@ const NayaxSyncFusionTable: React.FC = () => {
     <div style={{ margin: "20px" }}>
       <h2>Syncfusion DataGrid</h2>
       <GridComponent
-        dataSource={data}
+        dataSource={items}
         allowPaging={true}
         pageSettings={pageSettings}
         allowSorting={true}
@@ -29,29 +39,12 @@ const NayaxSyncFusionTable: React.FC = () => {
         height={315}
       >
         <ColumnsDirective>
-          <ColumnDirective
-            field="OrderID"
-            headerText="ID do Pedido"
-            width="100"
-            textAlign={"Right"}
-          />
-          <ColumnDirective
-            field="CustomerName"
-            headerText="Nome do Cliente"
-            width="150"
-          />
-          <ColumnDirective
-            field="Freight"
-            headerText="Frete"
-            width="100"
-            format="C2"
-            textAlign={"Right"}
-          />
-          <ColumnDirective
-            field="ShipCountry"
-            headerText="País de Envio"
-            width="120"
-          />
+          {columnConfigs.map((config) => (
+            <ColumnDirective
+              field={config.field}
+              headerText={config.headerText}
+            />
+          ))}
         </ColumnsDirective>
         <Inject services={[Page, Sort, Filter]} />
       </GridComponent>

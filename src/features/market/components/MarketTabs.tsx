@@ -27,13 +27,13 @@ export const MarketTabs = ({ market }: MarketTabsProps) => {
               <TabsTrigger value="assets">Market Assets</TabsTrigger>
             </TabsList>
             <TabsContent value="info">
-              <MarketInfoTab market={market} />
+              <MarketInfoTab key={market.id} market={market} />
             </TabsContent>
             <TabsContent value="prices">
-              <PricingTab market={market} />
+              <PricingTab key={market.id} market={market} />
             </TabsContent>
             <TabsContent value="assets">
-              <MarketAssetsTab market={market} />
+              <MarketAssetsTab key={market.id} market={market} />
             </TabsContent>
           </Tabs>
         ) : (
