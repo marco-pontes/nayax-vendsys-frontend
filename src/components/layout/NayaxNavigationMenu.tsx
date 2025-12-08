@@ -7,8 +7,10 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import nayaxLogo from "@/assets/images/nayax-logo.png";
+import { useTranslation } from "react-i18next";
 
 export function NayaxNavigationMenu() {
+  const { t } = useTranslation();
   return (
     <nav className="flex flex-row p-4">
       <div className="content-center ">
@@ -19,6 +21,7 @@ export function NayaxNavigationMenu() {
         >
           <img src={nayaxLogo} className="logo nayax" alt="Nayax logo" />
         </a>
+        <h1>{t("app.title")}</h1>
       </div>
       <NavigationMenu>
         <NavigationMenuList className="flex-wrap">

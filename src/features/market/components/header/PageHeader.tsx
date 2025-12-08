@@ -6,9 +6,11 @@ import { Checkbox } from "@/components/ui/checkbox.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import { PageHeaderSkeleton } from "@/features/market/components/header/PageHeaderSkeleton.tsx";
 import { useMarketContext } from "@/contexts/useMarketContext.tsx";
+import { useTranslation } from "react-i18next";
 
 export function PageHeader() {
   const { setCurrentMarketId } = useMarketContext();
+  const { t } = useTranslation();
 
   const onSelectMarket = (value: number | null) => {
     setCurrentMarketId(value);
@@ -25,6 +27,9 @@ export function PageHeader() {
         <PageHeaderSkeleton />
       ) : (
         <div className="flex flex-row flex-wrap content-center items-center p-8">
+          <div className="flex gap-8 w-full mb-6">
+            <h1 className="text-white">{t("markets.page.title")}</h1>
+          </div>
           <div className="flex gap-8 w-full mb-6">
             <Label className="text-white" htmlFor="nayax-markets">
               Select Market{" "}
