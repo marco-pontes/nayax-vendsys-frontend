@@ -101,3 +101,5 @@ At this point, moment library was installed to deal with date formatting, and i1
 After that I started to fine-tune the appearance of the tabs and 
 organizing components visually. As a last step and after the general design was implemented clearly, 
 I made some adjustments for different device sizes using tailwind.
+
+Take a look at the commit history for the project for more detailed information on this process.
